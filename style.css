@@ -42,9 +42,9 @@ Version: 1.1
 
 /* Fonts */
 :root {
-  --body-font: "Nunito", sans-serif;
-  --heading-font: "Nunito", sans-serif;
-  --secondary-font: "Nunito", sans-serif;
+  --body-font: "Raleway", sans-serif;
+  --heading-font: "Prata", Georgia, serif;
+  --secondary-font: "Playfair Display", Georgia, serif;
 }
 
 /* Bootstrap variables */
@@ -60,7 +60,7 @@ Version: 1.1
   --custom-easing: cubic-bezier(.17, .67, .83, .67);
 
   /* theme colors */
-  --bs-body-font-family: "Nunito", arial, sans-serif;
+  --bs-body-font-family: "Raleway", arial, sans-serif;
   --bs-body-font-size: 0.9rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.7;
@@ -2064,7 +2064,7 @@ img.books-image {
 }
 
 #quotation .author-name {
-  font-family: "Nunito", sans-serif;
+  font-family: "Prata", Georgia, serif;
   font-size: 1.4em;
 }
 
@@ -2212,7 +2212,7 @@ span.prev-price {
 }
 
 #latest-blog .meta-date {
-  font-family: "Nunito", sans-serif;
+  font-family: "Prata", Georgia, serif;
   color: #74642F;
   padding-bottom: 20px;
 }
