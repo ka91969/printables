@@ -36,6 +36,61 @@
 			text-decoration: none;
 			border: none;
 		}
+
+		/* ---- Hero slider: keep the description fully visible ---- */
+		#billboard .main-slider .slider-item {
+			display: flex !important;
+			align-items: center;
+			justify-content: space-between;
+			gap: 40px;
+		}
+
+		#billboard .main-slider .banner-content {
+			position: relative !important;
+			top: auto !important;
+			left: auto !important;
+			right: auto !important;
+			transform: none !important;
+			margin: 0 !important;
+			flex: 1 1 45%;
+			width: auto;
+			max-width: none;
+			padding: 30px 0;
+			text-align: left;
+		}
+
+		#billboard .main-slider .banner-content .banner-title {
+			font-size: clamp(2rem, 3.6vw, 3.5rem);
+			line-height: 1.15;
+			overflow-wrap: break-word;
+		}
+
+		#billboard .main-slider .banner-content p {
+			overflow-wrap: break-word;
+			white-space: normal;
+		}
+
+		#billboard .main-slider .banner-image {
+			position: relative;
+			flex: 0 0 50%;
+			max-width: 50%;
+			height: auto;
+			margin: 0;
+		}
+
+		@media (max-width: 767px) {
+			#billboard .main-slider .slider-item {
+				flex-direction: column-reverse;
+				gap: 20px;
+			}
+
+			#billboard .main-slider .banner-content,
+			#billboard .main-slider .banner-image {
+				flex: 1 1 auto;
+				max-width: 100%;
+				width: 100%;
+			}
+		}
 	</style>
 
 </head>
