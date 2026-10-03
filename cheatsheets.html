@@ -37,6 +37,73 @@
 			border: none;
 		}
 
+		/* ---- "View all cheatsheets" icon button ---- */
+		.section-header .section-title-row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 16px;
+		}
+
+		.section-header .section-title-row .section-title {
+			margin: 0;
+		}
+
+		a.view-all-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			height: 48px;
+			min-width: 48px;
+			padding: 0 14px;
+			border: 2px solid currentColor;
+			border-radius: 999px;
+			color: #222;
+			text-decoration: none;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: .03em;
+			text-transform: uppercase;
+			transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+		}
+
+		a.view-all-icon svg {
+			width: 24px;
+			height: 24px;
+			flex: 0 0 auto;
+		}
+
+		a.view-all-icon .view-all-label {
+			max-width: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			opacity: 0;
+			transition: max-width .3s ease, opacity .3s ease;
+		}
+
+		a.view-all-icon:hover,
+		a.view-all-icon:focus-visible {
+			background: #222;
+			color: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 14px rgba(0, 0, 0, .18);
+			outline: none;
+		}
+
+		a.view-all-icon:hover .view-all-label,
+		a.view-all-icon:focus-visible .view-all-label {
+			max-width: 160px;
+			opacity: 1;
+		}
+
+		@media (hover: none) {
+			a.view-all-icon .view-all-label {
+				max-width: 160px;
+				opacity: 1;
+			}
+		}
+
 		/* ---- Hero slider: keep the description fully visible ---- */
 		#billboard .main-slider .slider-item {
 			display: flex !important;
@@ -225,7 +292,18 @@
 				<div class="col-md-12">
 
 					<div class="section-header align-center">
-						<h2 class="section-title">Categories</h2>
+						<div class="section-title-row">
+							<h2 class="section-title">Categories</h2>
+							<a href="./cheatsheets-list.html" class="view-all-icon" title="Browse all cheatsheets" aria-label="Browse all cheatsheets">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<rect x="3" y="3" width="7.5" height="7.5" rx="1.6"></rect>
+									<rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"></rect>
+									<rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"></rect>
+									<path d="M14 17.25h6.5M17.25 14v6.5" transform="rotate(0)"></path>
+								</svg>
+								<span class="view-all-label">View all</span>
+							</a>
+						</div>
 					</div>
 
 					<ul class="tabs">
