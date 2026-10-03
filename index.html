@@ -2,16 +2,6 @@
 <html lang="en">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQRCH04Y9M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YQRCH04Y9M');
-</script>
-	
 	<title>Printem</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +25,73 @@
 			display: block;
 			text-decoration: none;
 			border: none;
+		}
+
+		/* ---- "View all planners" icon button ---- */
+		.section-header .section-title-row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 16px;
+		}
+
+		.section-header .section-title-row .section-title {
+			margin: 0;
+		}
+
+		a.view-all-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			height: 48px;
+			min-width: 48px;
+			padding: 0 14px;
+			border: 2px solid currentColor;
+			border-radius: 999px;
+			color: #222;
+			text-decoration: none;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: .03em;
+			text-transform: uppercase;
+			transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+		}
+
+		a.view-all-icon svg {
+			width: 24px;
+			height: 24px;
+			flex: 0 0 auto;
+		}
+
+		a.view-all-icon .view-all-label {
+			max-width: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			opacity: 0;
+			transition: max-width .3s ease, opacity .3s ease;
+		}
+
+		a.view-all-icon:hover,
+		a.view-all-icon:focus-visible {
+			background: #222;
+			color: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 14px rgba(0, 0, 0, .18);
+			outline: none;
+		}
+
+		a.view-all-icon:hover .view-all-label,
+		a.view-all-icon:focus-visible .view-all-label {
+			max-width: 160px;
+			opacity: 1;
+		}
+
+		@media (hover: none) {
+			a.view-all-icon .view-all-label {
+				max-width: 160px;
+				opacity: 1;
+			}
 		}
 	</style>
 
@@ -170,7 +227,18 @@
 				<div class="col-md-12">
 
 					<div class="section-header align-center">
-						<h2 class="section-title">Categories</h2>
+						<div class="section-title-row">
+							<h2 class="section-title">Categories</h2>
+							<a href="./planners-list.html" class="view-all-icon" title="Browse all planners" aria-label="Browse all planners">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<rect x="3" y="3" width="7.5" height="7.5" rx="1.6"></rect>
+									<rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"></rect>
+									<rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"></rect>
+									<path d="M14 17.25h6.5M17.25 14v6.5"></path>
+								</svg>
+								<span class="view-all-label">View all</span>
+							</a>
+						</div>
 					</div>
 
 					<ul class="tabs">
@@ -189,7 +257,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Lifestyle Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/trkwg?wanted=true" class="product-link">
 								<img src="images/tab-item1.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -206,7 +274,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Health Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/sygak?wanted=true" class="product-link">
 								<img src="images/tab-item2.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -223,7 +291,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Fitness Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ilbdl?wanted=true" class="product-link">
 								<img src="images/tab-item3.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -240,7 +308,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Meal Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/asrgg?wanted=true" class="product-link">
 								<img src="images/tab-item4.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -260,7 +328,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Action Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ofuchf?wanted=true" class="product-link">
 								<img src="images/tab-item9.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -277,7 +345,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Daily Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/xeebhs?wanted=true" class="product-link">
 								<img src="images/tab-item18.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -294,7 +362,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Business Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ademrdo?wanted=true" class="product-link">
 								<img src="images/tab-item16.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -311,7 +379,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Freelance Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/eukldg?wanted=true" class="product-link">
 								<img src="images/tab-item17.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -333,7 +401,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/School Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ivpzbg?wanted=true" class="product-link">
 												<img src="images/tab-item12.jpg" alt="Books" class="product-item">
 											</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -350,7 +418,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Parent Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/dqvysow?wanted=true" class="product-link">
 								<img src="images/tab-item13.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -367,7 +435,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Budget Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/oqgra?wanted=true" class="product-link">
 								<img src="images/tab-item14.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -384,7 +452,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Family Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/rblsfo?wanted=true" class="product-link">
 								<img src="images/tab-item15.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -406,7 +474,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Reflection Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ogakcr?wanted=true" class="product-link">
 								<img src="images/tab-item8.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -423,7 +491,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Action Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ofuchf?wanted=true" class="product-link">
 								<img src="images/tab-item9.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -440,7 +508,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Event Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/qzjdsb?wanted=true" class="product-link">
 								<img src="images/tab-item10.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -457,7 +525,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Moving Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/bkrubo?wanted=true" class="product-link">
 								<img src="images/tab-item11.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -478,7 +546,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Meal Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/asrgg?wanted=true" class="product-link">
 								<img src="images/tab-item4.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -495,7 +563,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Fitness Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ilbdl?wanted=true" class="product-link">
 								<img src="images/tab-item3.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -512,7 +580,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Health Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/sygak?wanted=true" class="product-link">
 								<img src="images/tab-item2.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -529,7 +597,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Lifestyle Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/trkwg?wanted=true" class="product-link">
 								<img src="images/tab-item1.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -550,7 +618,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Meal Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/asrgg?wanted=true" class="product-link">
 								<img src="images/tab-item4.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -567,7 +635,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Mindfullness Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/ciptq?wanted=true" class="product-link">
 								<img src="images/tab-item6.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -588,7 +656,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Holiday Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/lluzza?wanted=true" class="product-link">
 								<img src="images/tab-item5.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
@@ -605,7 +673,7 @@
 								<div class="col-md-3">
 									<div class="product-item">
 										<figure class="product-style">
-											<a href="planners/Advent Planner.html" class="product-link">
+											<a href="https://765173807656.gumroad.com/l/nymuaj?wanted=true" class="product-link">
 								<img src="images/tab-item7.jpg" alt="Books" class="product-item">
 							</a>
 <button type="button" class="add-to-cart" data-product-tile="add-to-cart"
