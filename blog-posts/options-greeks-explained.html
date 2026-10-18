@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho | Printem Blog</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="options greeks explained, delta gamma theta vega rho, options greeks cheatsheet, covered call, iron condor, long straddle, put call parity">
+	<meta name="description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../icomoon/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/vendor.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../css/blog-custom.css">
+
+<link rel="canonical" href="https://printem.org/blog-posts/options-greeks-explained.html">
+	<meta property="og:title" content="Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho">
+	<meta property="og:description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.">
+	<meta property="og:image" content="https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj">
+	<script type="application/ld+json">
+	{{"@context":"https://schema.org","@type":"Article","headline":"Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho","description":"A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.","image":"https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj","datePublished":"2026-10-18","author":{{"@type":"Organization","name":"Printem"}},"publisher":{{"@type":"Organization","name":"Printem","url":"https://printem.org"}},"mainEntityOfPage":"https://printem.org/blog-posts/options-greeks-explained.html"}}
+	</script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+
+	<div id="header-wrap">
+
+		<header id="header">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-md-2">
+						<div class="main-logo">
+							<a href="../index.html"><img src="../images/main-logo.png" alt="logo"></a>
+						</div>
+
+					</div>
+
+					<div class="col-md-10">
+
+						<nav id="navbar">
+							<div class="main-menu stellarnav">
+								<ul class="menu-list">
+									<li class="menu-item"><a href="../index.html" class="nav-link">Planners</a></li>
+									<li class="menu-item"><a href="../cheatsheets.html" class="nav-link">CheatSheets</a></li>
+									<li class="menu-item"><a href="../notebooks.html" class="nav-link">Notebooks</a></li>
+									<li class="menu-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+								</ul>
+
+								<div class="hamburger">
+									<span class="bar"></span>
+									<span class="bar"></span>
+									<span class="bar"></span>
+								</div>
+
+							</div>
+						</nav>
+
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+	</div><!--header-wrap-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-title">Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho</h1>
+					<nav aria-label="breadcrumb" class="post-breadcrumb">
+						<a href="../blog.html">&laquo; Back to all articles</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="padding-medium">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="post-thumbnail mb-5">
+						<img src="https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj" alt="Options trading chart on a screen" class="img-fluid">
+					</div>
+					<div class="post-content">
+
+<p>Options prices move for reasons that the underlying stock price alone does not explain. Time passes, volatility shifts, and interest rates change. The Greeks are the standard measures of those sensitivities. The <a href="https://printem.org/cheatsheets/Trading_Cheatsheet.html">Day Trading &amp; Crypto Cheatsheet</a> covers the five core Greeks on its third page, alongside three common strategy setups. This guide explains what each one means in practice.</p>
+<p><em>Options carry substantial risk, and an option can expire worthless. This article is educational and not investment advice.</em></p>
+
+<h2>Delta: sensitivity to the stock price</h2>
+<p>Delta estimates how much an option's price changes for a $1 move in the underlying. A call's delta ranges from 0 to 1, and a put's from −1 to 0. A call with a delta of 0.50 should gain about $0.50 if the stock rises $1, all else equal. Delta also gives a rough sense of the probability the option finishes in the money, which is why traders often read it that way, though the figure is an approximation.</p>
+
+<h2>Gamma: how fast delta changes</h2>
+<p>Gamma measures how much delta moves when the stock moves. It is highest for at-the-money options close to expiration. High gamma means a position can change direction quickly, which increases both opportunity and risk. Long options have positive gamma, and short options have negative gamma.</p>
+
+<h2>Theta: the cost of time</h2>
+<p>Theta is the amount an option loses in value each day, all else equal. Buyers of options pay theta, and sellers collect it. Time decay accelerates as expiration approaches, which is why short-dated options can lose value quickly even when the stock barely moves.</p>
+
+<h2>Vega: sensitivity to volatility</h2>
+<p>Vega measures how much an option's price changes for a one-point change in implied volatility. Options are typically more expensive when implied volatility is high, so vega matters most around earnings announcements or major news events. A position that is long vega benefits if volatility rises.</p>
+
+<h2>Rho: sensitivity to interest rates</h2>
+<p>Rho measures sensitivity to changes in interest rates. It is usually the smallest of the Greeks for short-term options, and it matters more for longer-dated contracts.</p>
+
+<h2>How the Greeks show up in three strategies</h2>
+<ul>
+<li><strong>Covered call:</strong> you own the stock and sell a call against it. You collect premium, which gives you a positive theta benefit, but you cap your upside above the strike price.</li>
+<li><strong>Iron condor:</strong> you sell an out-of-the-money put spread and an out-of-the-money call spread. The position has defined risk and generally profits when the stock stays within a range, which makes theta the main source of return. Large moves outside the range create losses.</li>
+<li><strong>Long straddle:</strong> you buy a call and a put at the same strike. The position has positive gamma and vega and is a bet on a large move in either direction. Theta works against it, so the stock has to move enough to overcome time decay.</li>
+</ul>
+
+<h2>Put-call parity: a useful check</h2>
+<p>For European-style options on a non-dividend stock, put-call parity links calls and puts with the same strike and expiration:</p>
+<p class="formula"><code>C + K × e^(−rT) = P + S</code></p>
+<p>Here C is the call price, P is the put price, S is the stock price, K is the strike, r is the risk-free rate, and T is time to expiration in years. If the two sides differ significantly, the difference often signals a pricing or data error, or an arbitrage opportunity that is hard to capture after costs.</p>
+
+<h2>A practical habit</h2>
+<p>Before opening any options position, look at its delta, gamma, theta and vega together. A position can look cheap and still have a large negative theta or a hidden exposure to volatility. The printable reference puts the five Greeks side by side so you can check them quickly.</p>
+<p>For the full table of Greeks and strategy setups, see the <a href="https://printem.org/cheatsheets/Trading_Cheatsheet.html">Day Trading &amp; Crypto Cheatsheet</a>. Related: <a href="trading-risk-management-guide.html">the 1% risk rule and position sizing</a>.</p>
+
+					</div><!--post-content-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="footer-cta text-center">
+						<p>Ready to put this into practice? Browse the full <a href="../index.html">planner collection</a> and find your next printable.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="copyright">
+						<div class="row">
+
+							<div class="col-md-6">
+								<p>&copy; 2026 All rights reserved </p>
+							</div>
+
+						</div>
+					</div><!--grid-->
+
+				</div><!--footer-bottom-content-->
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>
