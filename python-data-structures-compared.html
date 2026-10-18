@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Python Lists, Tuples, Dictionaries and Sets: Which One to Use | Printem Blog</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="python lists vs tuples, python dictionary, python sets, python data structures, python collections explained, python beginner cheatsheet">
+	<meta name="description" content="A practical comparison of Python lists, tuples, dictionaries and sets, covering mutability, ordering, uniqueness and lookup speed, with code examples and a decision guide.">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../icomoon/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/vendor.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../css/blog-custom.css">
+
+<link rel="canonical" href="https://printem.org/blog-posts/python-data-structures-compared.html">
+	<meta property="og:title" content="Python Lists, Tuples, Dictionaries and Sets: Which One to Use">
+	<meta property="og:description" content="A practical comparison of Python lists, tuples, dictionaries and sets, covering mutability, ordering, uniqueness and lookup speed, with code examples and a decision guide.">
+	<meta property="og:image" content="https://public-files.gumroad.com/qoaibwookbptnzjb0f8diia29unv">
+	<script type="application/ld+json">
+	{{"@context":"https://schema.org","@type":"Article","headline":"Python Lists, Tuples, Dictionaries and Sets: Which One to Use","description":"A practical comparison of Python lists, tuples, dictionaries and sets, covering mutability, ordering, uniqueness and lookup speed, with code examples and a decision guide.","image":"https://public-files.gumroad.com/qoaibwookbptnzjb0f8diia29unv","datePublished":"2026-10-18","author":{{"@type":"Organization","name":"Printem"}},"publisher":{{"@type":"Organization","name":"Printem","url":"https://printem.org"}},"mainEntityOfPage":"https://printem.org/blog-posts/python-data-structures-compared.html"}}
+	</script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+
+	<div id="header-wrap">
+
+		<header id="header">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-md-2">
+						<div class="main-logo">
+							<a href="../index.html"><img src="../images/main-logo.png" alt="logo"></a>
+						</div>
+
+					</div>
+
+					<div class="col-md-10">
+
+						<nav id="navbar">
+							<div class="main-menu stellarnav">
+								<ul class="menu-list">
+									<li class="menu-item"><a href="../index.html" class="nav-link">Planners</a></li>
+									<li class="menu-item"><a href="../cheatsheets.html" class="nav-link">CheatSheets</a></li>
+									<li class="menu-item"><a href="../notebooks.html" class="nav-link">Notebooks</a></li>
+									<li class="menu-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+								</ul>
+
+								<div class="hamburger">
+									<span class="bar"></span>
+									<span class="bar"></span>
+									<span class="bar"></span>
+								</div>
+
+							</div>
+						</nav>
+
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+	</div><!--header-wrap-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-title">Python Lists, Tuples, Dictionaries and Sets: Which One to Use</h1>
+					<nav aria-label="breadcrumb" class="post-breadcrumb">
+						<a href="../blog.html">&laquo; Back to all articles</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="padding-medium">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="post-thumbnail mb-5">
+						<img src="https://public-files.gumroad.com/qoaibwookbptnzjb0f8diia29unv" alt="Programmer writing Python code" class="img-fluid">
+					</div>
+					<div class="post-content">
+
+<p>Choosing the right container is one of the first decisions in Python, and it shapes how readable and fast your code becomes. The <a href="https://printem.org/cheatsheets/Python_Cheatsheet.html">Printable Python Beginner Cheatsheet</a> covers lists, tuples, dictionaries and sets on its second page. This guide explains the differences and when each one earns its place.</p>
+
+<h2>Lists: ordered and changeable</h2>
+<p>A list keeps items in order and lets you add, remove or replace them:</p>
+<pre><code>tasks = ["email", "report"]
+tasks.append("invoice")
+tasks.insert(0, "call client")
+tasks.remove("email")
+print(tasks)        # ['call client', 'report', 'invoice']
+print(tasks[-1])    # invoice</code></pre>
+<p>Use a list when order matters and the contents will change, such as a queue of tasks or a series of readings.</p>
+
+<h2>Tuples: ordered and fixed</h2>
+<p>A tuple is an ordered sequence that cannot be changed after it is created. This makes tuples a good choice for values that belong together, such as coordinates or a record:</p>
+<pre><code>point = (4, 9)
+x, y = point        # tuple unpacking
+print(x + y)        # 13</code></pre>
+<p>Because tuples are immutable, they can also be used as dictionary keys, which lists cannot. Choose a tuple when the data is a fixed group rather than a collection you will edit.</p>
+
+<h2>Dictionaries: key-value lookup</h2>
+<p>A dictionary maps unique keys to values. Lookups by key are fast, which makes dictionaries the usual choice for counting, grouping or matching records:</p>
+<pre><code>stock = {"apples": 12, "pears": 0}
+stock["plums"] = 5
+print(stock.get("kiwis", 0))    # 0, safe default
+for item, count in stock.items():
+    print(item, count)</code></pre>
+<p>Since Python 3.7, dictionaries keep insertion order. Use <code>.get()</code> when a key might be missing, and <code>.items()</code> when you need both keys and values in a loop.</p>
+
+<h2>Sets: unique items and fast membership tests</h2>
+<p>A set holds unique items with no guaranteed order. Sets are useful for removing duplicates and for comparing groups:</p>
+<pre><code>a = {"python", "sql", "git"}
+b = {"git", "docker"}
+print(a.union(b))          # all four skills
+print(a.intersection(b))   # {'git'}
+print("sql" in a)          # True, checked quickly</code></pre>
+<p>Checking whether an item is in a set is typically much faster than checking a list, especially for large collections.</p>
+
+<h2>A quick decision guide</h2>
+<ol>
+<li>Need order and will change items? Use a <strong>list</strong>.</li>
+<li>Need a fixed group, or a value used as a key? Use a <strong>tuple</strong>.</li>
+<li>Need to look things up by a label? Use a <strong>dictionary</strong>.</li>
+<li>Need unique items or fast membership checks? Use a <strong>set</strong>.</li>
+</ol>
+
+<h2>Common mistakes</h2>
+<ul>
+<li>Using a list where a set would prevent duplicates automatically.</li>
+<li>Trying to change a tuple. Build a new tuple instead.</li>
+<li>Assuming a set keeps your original order. It does not.</li>
+</ul>
+<p>Keep the decision guide next to your keyboard, or use the <a href="https://printem.org/cheatsheets/Python_Cheatsheet.html">Printable Python Beginner Cheatsheet</a> as a reference while you practice. Related: <a href="python-beginner-cheatsheet-guide.html">the full Python beginner syntax guide</a>.</p>
+
+					</div><!--post-content-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="footer-cta text-center">
+						<p>Ready to put this into practice? Browse the full <a href="../index.html">planner collection</a> and find your next printable.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="copyright">
+						<div class="row">
+
+							<div class="col-md-6">
+								<p>&copy; 2026 All rights reserved </p>
+							</div>
+
+						</div>
+					</div><!--grid-->
+
+				</div><!--footer-bottom-content-->
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>
