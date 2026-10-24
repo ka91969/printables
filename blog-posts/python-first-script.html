@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Your First Useful Python Script | Printem</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="first python script, python beginner project, python functions dictionaries files, python with open, python try except, python beginner cheatsheet, learn python">
+	<meta name="description" content="Build a small, useful Python script that combines functions, dictionaries, file handling and error handling, with tested code examples and a guide to next.">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../icomoon/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/vendor.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../css/blog-custom.css">
+
+<link rel="canonical" href="https://printem.org/blog-posts/python-first-script.html">
+	<meta property="og:title" content="Your First Useful Python Script">
+	<meta property="og:description" content="Build a small, useful Python script that combines functions, dictionaries, file handling and error handling, with tested code examples and a guide to next.">
+	<meta property="og:image" content="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg">
+
+	<script type="application/ld+json">
+	{"@context": "https://schema.org", "@type": "Article", "headline": "Your First Useful Python Script: Functions, Dictionaries and Files Together", "description": "Build a small, useful Python script that combines functions, dictionaries, file handling and error handling, with tested code examples and a guide to next.", "image": "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg", "datePublished": "2026-10-24", "author": {"@type": "Organization", "name": "Printem"}, "publisher": {"@type": "Organization", "name": "Printem", "url": "https://printem.org"}, "mainEntityOfPage": "https://printem.org/blog-posts/python-first-script.html"}
+	</script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+
+	<div id="header-wrap">
+
+		<header id="header">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-md-2">
+						<div class="main-logo">
+							<a href="../index.html"><img src="../images/main-logo.png" alt="logo"></a>
+						</div>
+
+					</div>
+
+					<div class="col-md-10">
+
+						<nav id="navbar">
+							<div class="main-menu stellarnav">
+								<ul class="menu-list">
+									<li class="menu-item"><a href="../index.html" class="nav-link">Planners</a></li>
+									<li class="menu-item"><a href="../cheatsheets.html" class="nav-link">CheatSheets</a></li>
+									<li class="menu-item"><a href="../notebooks.html" class="nav-link">Notebooks</a></li>
+									<li class="menu-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+								</ul>
+
+								<div class="hamburger">
+									<span class="bar"></span>
+									<span class="bar"></span>
+									<span class="bar"></span>
+								</div>
+
+							</div>
+						</nav>
+
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+	</div><!--header-wrap-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-title">Your First Useful Python Script: Functions, Dictionaries and Files Together</h1>
+					<nav aria-label="breadcrumb" class="post-breadcrumb">
+						<a href="../blog.html">&laquo; Back to all articles</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="padding-medium">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="post-thumbnail mb-5">
+						<img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt="Python code open on a laptop screen" class="img-fluid">
+					</div>
+					<div class="post-content">
+
+<p>Most beginners learn Python one topic at a time: variables, then loops, then functions, then files. The gap appears when they try to combine them. A small, complete program shows how the pieces fit together. This guide builds one step by step: a script that totals monthly expenses from a text file, skips bad lines, and prints a summary. Every example here runs as written. The syntax is covered on the pages of the <a href="https://printem.org/cheatsheets/Python_Cheatsheet.html">Printable Python Beginner Cheatsheet</a>, which you can keep beside your keyboard while you follow along.</p>
+
+<h2>Step 1: Work with a dictionary</h2>
+<p>A dictionary holds labeled values, which suits expense data:</p>
+<pre><code>entries = {"rent": 1000, "food": 240, "transport": 60}
+print(entries.get("gym", 0))    # 0, a safe default instead of an error</code></pre>
+<p>The <code>.get()</code> method returns a default when a key is missing. That makes lookups safer than <code>entries["gym"]</code>, which would stop the program with an error.</p>
+
+<h2>Step 2: Write a function that does one job</h2>
+<p>A function should take inputs, return a result, and avoid side effects where possible. This one summarizes spending against a budget:</p>
+<pre><code>def monthly_summary(items, budget):
+    spent = sum(items.values())
+    return {"spent": spent, "left": budget - spent}
+
+print(monthly_summary(entries, 1500))    # {'spent': 1300, 'left': 200}</code></pre>
+<p>Because the function returns a value rather than printing it, you can reuse it in other programs or test it on different data.</p>
+
+<h2>Step 3: Save and read a file safely</h2>
+<p>The <code>with</code> statement opens a file and closes it automatically, even if an error occurs:</p>
+<pre><code>with open("budget_notes.txt", "w") as f:
+    f.write("Rent paid\n")
+
+with open("budget_notes.txt", "a") as f:
+    f.write("Groceries logged\n")
+
+with open("budget_notes.txt", "r") as f:
+    lines = f.readlines()
+print(len(lines))    # 2</code></pre>
+<p>Mode <code>"w"</code> overwrites a file, while <code>"a"</code> appends to it. Choose deliberately, because overwriting by accident is an easy mistake.</p>
+
+<h2>Step 4: Handle bad input without crashing</h2>
+<p>Real files contain typos. A conversion function that handles them gracefully is worth writing early:</p>
+<pre><code>def parse_amount(text):
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+print(parse_amount("12.50"), parse_amount("abc"))    # 12.5 None</code></pre>
+<p>Catch the specific error you expect, such as <code>ValueError</code>. A broad catch hides real bugs, and you want those to surface.</p>
+
+<h2>Step 5: Print a clear, numbered list</h2>
+<p><code>enumerate()</code> gives you the position and the item together. Starting the count at 1 suits human-readable output:</p>
+<pre><code>for i, name in enumerate(["rent", "food"], start=1):
+    print(i, name)</code></pre>
+
+<h2>Putting it together</h2>
+<p>A full script combines these pieces: read each line, parse the amount with the safe function, skip any line that fails, add the valid amounts to a dictionary, and pass the totals to the summary function. Each part is small enough to test on its own, which is the habit that makes larger programs manageable.</p>
+
+<h2>Common beginner mistakes</h2>
+<ul>
+<li>Forgetting that <code>input()</code> and file lines arrive as text. Convert them before doing arithmetic.</li>
+<li>Using <code>"w"</code> when you meant <code>"a"</code>, which erases the file.</li>
+<li>Catching every exception with a bare <code>except</code>, which hides mistakes.</li>
+</ul>
+
+<h2>Where to go next</h2>
+<p>Once this script works, add a loop that asks the user for entries, or save the summary to a new file. The next topics to study are lists versus dictionaries, which we compare in our <a href="python-data-structures-compared.html">data structures guide</a>, and the basics covered in the <a href="python-beginner-cheatsheet-guide.html">beginner syntax guide</a>.</p>
+
+
+<h2>Testing your script before you trust it</h2>
+<p>A script that appears to work on one example may fail on another. Before you rely on a program, test it with several inputs, including ordinary values, empty files, lines with errors and very large numbers. Each test should have a predicted result written down before you run it. When the actual output differs, the gap shows you where your assumptions were wrong. This discipline feels slow at first, but it saves hours of debugging later, because you catch errors while the code is still small.</p>
+<p>Print statements remain a perfectly good debugging tool at this stage. Printing the value of a variable at a key point shows you exactly what the program is doing, and removing the prints once the logic is correct keeps the final script clean.</p>
+
+<h2>Extending the script step by step</h2>
+<p>Once the basic script works, extend it one feature at a time. You might add a function that writes the summary to a new file, or a loop that lets the user enter expenses from the keyboard. Each change should be small enough that you can test it immediately. When something breaks, you know the cause is in the last change, which makes the problem easy to find. Large rewrites, by contrast, hide errors inside many changes at once.</p>
+
+<h2>Organising the file for someone else to read</h2>
+<p>Even a short script benefits from clear organisation. Put the functions at the top, use names that describe what each variable holds, and add a brief comment where the logic is not obvious. Your future self will read the script months later, and a clear layout makes that reading quick. Clean code is also the easiest kind to share with a colleague or post for feedback.</p>
+
+<h2>Where this project leads</h2>
+<p>A finished budget summary script is a real piece of software. It reads data, handles errors, applies functions and produces output, which are the same skills used in far larger systems. The step from here is not to learn an entirely new language but to apply these habits to new problems. Choose the next small project, repeat the cycle of planning, testing and extending, and the skills compound.</p>
+
+<h2>Choosing names that explain the code</h2>
+<p>Good names do much of the documenting for you. A variable called total_spent communicates its purpose far better than a single letter, and a function called parse_amount says what it does. Spend a few moments choosing names before you write the code. The effort pays back every time you read the script later, and it makes the program easier for a collaborator to understand.</p>
+
+<h2>Reading the script aloud as a final check</h2>
+<p>Before calling a script finished, read it aloud from top to bottom, explaining each step as you go. Gaps in your understanding become obvious when you have to say them out loud. You may notice a variable that is never used, a condition that can never be true or a comment that no longer matches the code. This quick review catches problems that automated tools sometimes miss, and it reinforces what the program actually does.</p>
+
+<h2>Explore the collection</h2>
+<p>The <a href="https://printem.org/cheatsheets/Python_Cheatsheet.html">Printable Python Beginner Cheatsheet</a> keeps these patterns on four printable pages. Browse the wider <a href="https://printem.org/cheatsheets.html">cheatsheets category</a>, or see all <a href="https://printem.org/index.html">planners</a> for study routines.</p>
+
+					</div><!--post-content-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="footer-cta text-center">
+						<p>Ready to put this into practice? Browse the full <a href="../index.html">planner collection</a> and find your next printable.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="copyright">
+						<div class="row">
+
+							<div class="col-md-6">
+								<p>&copy; 2026 All rights reserved </p>
+							</div>
+
+						</div>
+					</div><!--grid-->
+
+				</div><!--footer-bottom-content-->
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>

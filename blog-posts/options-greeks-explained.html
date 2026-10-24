@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho | Printem Blog</title>
+	<title>Options Greeks Explained | Printem</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="author" content="">
 	<meta name="keywords" content="options greeks explained, delta gamma theta vega rho, options greeks cheatsheet, covered call, iron condor, long straddle, put call parity">
-	<meta name="description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.">
+	<meta name="description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call.">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -22,11 +22,12 @@
 	<link rel="stylesheet" type="text/css" href="../css/blog-custom.css">
 
 <link rel="canonical" href="https://printem.org/blog-posts/options-greeks-explained.html">
-	<meta property="og:title" content="Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho">
-	<meta property="og:description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.">
-	<meta property="og:image" content="https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj">
+	<meta property="og:title" content="Options Greeks Explained">
+	<meta property="og:description" content="A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call.">
+	<meta property="og:image" content="https://images.pexels.com/photos/38821937/pexels-photo-38821937/free-photo-of-dynamic-stock-market-candlestick-chart-analysis.jpeg">
+
 	<script type="application/ld+json">
-	{{"@context":"https://schema.org","@type":"Article","headline":"Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho","description":"A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call parity relationship.","image":"https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj","datePublished":"2026-10-18","author":{{"@type":"Organization","name":"Printem"}},"publisher":{{"@type":"Organization","name":"Printem","url":"https://printem.org"}},"mainEntityOfPage":"https://printem.org/blog-posts/options-greeks-explained.html"}}
+	{"@context": "https://schema.org", "@type": "Article", "headline": "Options Greeks Explained: Delta, Gamma, Theta, Vega and Rho", "description": "A plain-English guide to the five options Greeks, how each one measures risk, how they apply to covered calls, iron condors and straddles, and the put-call.", "image": "https://images.pexels.com/photos/38821937/pexels-photo-38821937/free-photo-of-dynamic-stock-market-candlestick-chart-analysis.jpeg", "datePublished": "2026-10-18", "author": {"@type": "Organization", "name": "Printem"}, "publisher": {"@type": "Organization", "name": "Printem", "url": "https://printem.org"}, "mainEntityOfPage": "https://printem.org/blog-posts/options-greeks-explained.html"}
 	</script>
 </head>
 
@@ -91,7 +92,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="post-thumbnail mb-5">
-						<img src="https://public-files.gumroad.com/q6ww59jwaiitwp3tqvyoix3yr7rj" alt="Options trading chart on a screen" class="img-fluid">
+						<img src="https://images.pexels.com/photos/38821937/pexels-photo-38821937/free-photo-of-dynamic-stock-market-candlestick-chart-analysis.jpeg" alt="Options trading chart on a screen" class="img-fluid">
 					</div>
 					<div class="post-content">
 
@@ -129,7 +130,19 @@
 <p>Before opening any options position, look at its delta, gamma, theta and vega together. A position can look cheap and still have a large negative theta or a hidden exposure to volatility. The printable reference puts the five Greeks side by side so you can check them quickly.</p>
 <p>For the full table of Greeks and strategy setups, see the <a href="https://printem.org/cheatsheets/Trading_Cheatsheet.html">Day Trading &amp; Crypto Cheatsheet</a>. Related: <a href="trading-risk-management-guide.html">the 1% risk rule and position sizing</a>.</p>
 
-					</div><!--post-content-->
+					<h2>Implied volatility and why it moves option prices</h2>
+<p>Implied volatility reflects the market's expectation of how much an asset will move. When implied volatility rises, options become more expensive, even if the underlying price has not changed. This is why options can lose value after a major announcement, once the uncertainty has been resolved. Vega measures this sensitivity, and it is one of the reasons the Greeks should be read together rather than in isolation. A trader who buys options before an expected event may be right about the direction of the price and still lose money if volatility falls after the event.</p>
+<p>Understanding implied volatility also helps you read the market. A rising implied volatility suggests that participants expect larger moves, while a falling one suggests calmer expectations. Neither is a forecast, but both are useful context for choosing a strategy.</p>
+
+<h2>Assignment and early exercise risk</h2>
+<p>Options carry obligations as well as rights. The seller of an option can be assigned, which means being required to buy or sell the underlying asset. For American-style options, the holder can exercise early, which can catch sellers unprepared, particularly around dividend dates. Covered call sellers face this risk when a dividend is approaching and the call is deep in the money. Before selling any option, understand the assignment rules for that contract, and make sure you can meet the obligation if it arrives.</p>
+
+<h2>Thinking about time as a resource</h2>
+<p>Theta is often described as the seller's friend and the buyer's enemy, and that summary is broadly accurate. Time decay is not uniform, however. It accelerates as expiration approaches, and it is strongest for at-the-money options. A trader who holds a long option through its final weeks may see most of its remaining value disappear, even if the underlying price moves a little. Choosing an expiration date is therefore part of the strategy, not a minor detail.</p>
+
+<h2>Keeping strategy and risk aligned</h2>
+<p>Each strategy has a risk profile, and the Greeks help you see it before you commit money. A covered call limits upside and collects premium, an iron condor profits from a quiet range and carries defined risk, and a long straddle depends on a large move in either direction. Check the position's delta, gamma, theta and vega together, decide how much you could lose in the worst realistic case, and confirm that the loss fits your one percent limit. If it does not, reduce the size or choose a different structure.</p>
+</div><!--post-content-->
 				</div>
 			</div>
 		</div>
