@@ -209,11 +209,21 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-5">
-					<a href="#" class="product-image"><img src="images/main-banner10.jpg"></a>
+				<div class="col-md-6">
+					<div class="product-gallery d-flex gap-3">
+						<div class="product-thumbs d-flex flex-column gap-2" style="width: 90px; flex-shrink: 0;">
+							<img src="https://public-files.gumroad.com/rw3fhbmn5uh0x32krn1cdyjmhhw9" alt="Preview 1" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/rw3fhbmn5uh0x32krn1cdyjmhhw9')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/71xzp7w6u4xcn560klkpzk7nnmot" alt="Preview 2" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/71xzp7w6u4xcn560klkpzk7nnmot')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/9s0dpnm3rdqowpqtr35gvcx2ngcq" alt="Preview 3" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/9s0dpnm3rdqowpqtr35gvcx2ngcq')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/7pdwlju5tr005lr6yw8gnzrf0zao" alt="Preview 4" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/7pdwlju5tr005lr6yw8gnzrf0zao')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+						</div>
+						<div class="product-main flex-grow-1">
+							<img id="mainProductImage" src="images/main-banner10.jpg" alt="Family Planner" class="img-fluid rounded shadow-sm" style="max-height: 520px; width: 100%; object-fit: contain; background: #faf8f5; border: 1px solid #eee;">
+						</div>
+					</div>
 				</div>
 
-				<div class="col-md-7 pl-5">
+				<div class="col-md-6 pl-5">
 					<div class="product-detail">
 						<span>Planners</span>
 						<h1>Family Planner</h1>
@@ -253,6 +263,16 @@ Whether you are interviewing babysitters, comparing local daycares or schools, p
 			</div>
 		</div>
 	</section>
+
+	<script>
+	function changeMainImage(thumbEl, src) {
+		document.getElementById('mainProductImage').src = src;
+		document.querySelectorAll('.thumb-img').forEach(function(el) {
+			el.style.border = '2px solid #ddd';
+		});
+		thumbEl.style.border = '2px solid #333';
+	}
+	</script>
 
 	<section class="product-tabs mt-5">
 		<div class="container">

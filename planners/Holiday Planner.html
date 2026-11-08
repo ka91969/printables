@@ -209,11 +209,21 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-5">
-					<a href="#" class="product-image"><img src="images/tab-item5.jpg"></a>
+				<div class="col-md-6">
+					<div class="product-gallery d-flex gap-3">
+						<div class="product-thumbs d-flex flex-column gap-2" style="width: 90px; flex-shrink: 0;">
+							<img src="https://public-files.gumroad.com/v7bac4e1oxiueqjq65yjo5ux1lc5" alt="Preview 1" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/v7bac4e1oxiueqjq65yjo5ux1lc5')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/nneqw2a3g5ndykh5jjc6azxnqwe6" alt="Preview 2" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/nneqw2a3g5ndykh5jjc6azxnqwe6')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/ltt66z45asf7fef1si55l0hg3t8m" alt="Preview 3" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/ltt66z45asf7fef1si55l0hg3t8m')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/djzwas0jk4d5ofyfukx4ftpabjyc" alt="Preview 4" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/djzwas0jk4d5ofyfukx4ftpabjyc')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+						</div>
+						<div class="product-main flex-grow-1">
+							<img id="mainProductImage" src="images/main-banner5.jpg" alt="Holiday Planner" class="img-fluid rounded shadow-sm" style="max-height: 520px; width: 100%; object-fit: contain; background: #faf8f5; border: 1px solid #eee;">
+						</div>
+					</div>
 				</div>
 
-				<div class="col-md-7 pl-5">
+				<div class="col-md-6 pl-5">
 					<div class="product-detail">
 						<span>Planners</span>
 						<h1>Holiday Planner</h1>
@@ -253,6 +263,16 @@ Whether you are looking for fun rainy-day activities, cozy family traditions, or
 			</div>
 		</div>
 	</section>
+
+	<script>
+	function changeMainImage(thumbEl, src) {
+		document.getElementById('mainProductImage').src = src;
+		document.querySelectorAll('.thumb-img').forEach(function(el) {
+			el.style.border = '2px solid #ddd';
+		});
+		thumbEl.style.border = '2px solid #333';
+	}
+	</script>
 
 	<section class="product-tabs mt-5">
 		<div class="container">

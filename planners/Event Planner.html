@@ -209,11 +209,21 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-5">
-					<a href="#" class="product-image"><img src="images/main-banner7.jpg"></a>
+				<div class="col-md-6">
+					<div class="product-gallery d-flex gap-3">
+						<div class="product-thumbs d-flex flex-column gap-2" style="width: 90px; flex-shrink: 0;">
+							<img src="https://public-files.gumroad.com/z2xflqbsneoqayrcwdhj443520ef" alt="Preview 1" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/z2xflqbsneoqayrcwdhj443520ef')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/reg7ht4fav2fegfebgnofudfyfvh" alt="Preview 2" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/reg7ht4fav2fegfebgnofudfyfvh')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/0dg3ki8xejv070na4nz7ien63ulw" alt="Preview 3" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/0dg3ki8xejv070na4nz7ien63ulw')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/snukti8yx9tavps9u20ujazgda4q" alt="Preview 4" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/snukti8yx9tavps9u20ujazgda4q')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+						</div>
+						<div class="product-main flex-grow-1">
+							<img id="mainProductImage" src="images/main-banner7.jpg" alt="Event Planner" class="img-fluid rounded shadow-sm" style="max-height: 520px; width: 100%; object-fit: contain; background: #faf8f5; border: 1px solid #eee;">
+						</div>
+					</div>
 				</div>
 
-				<div class="col-md-7 pl-5">
+				<div class="col-md-6 pl-5">
 					<div class="product-detail">
 						<span>Planners</span>
 						<h1>Event Planner</h1>
@@ -253,6 +263,16 @@ Whether you are coordinating a wedding, milestone birthday, anniversary party, o
 			</div>
 		</div>
 	</section>
+
+	<script>
+	function changeMainImage(thumbEl, src) {
+		document.getElementById('mainProductImage').src = src;
+		document.querySelectorAll('.thumb-img').forEach(function(el) {
+			el.style.border = '2px solid #ddd';
+		});
+		thumbEl.style.border = '2px solid #333';
+	}
+	</script>
 
 	<section class="product-tabs mt-5">
 		<div class="container">

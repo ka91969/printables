@@ -209,11 +209,21 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-5">
-					<a href="#" class="product-image"><img src="images/main-banner18.jpg"></a>
+				<div class="col-md-6">
+					<div class="product-gallery d-flex gap-3">
+						<div class="product-thumbs d-flex flex-column gap-2" style="width: 90px; flex-shrink: 0;">
+							<img src="https://public-files.gumroad.com/kn5am5s0730a3arycjqupufld4v5" alt="Preview 1" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/kn5am5s0730a3arycjqupufld4v5')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/dajuxv572qvoiyyz6pkwd1c9yzs5" alt="Preview 2" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/dajuxv572qvoiyyz6pkwd1c9yzs5')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/zu7eto4d56vtciz1jqth5bw52z07" alt="Preview 3" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/zu7eto4d56vtciz1jqth5bw52z07')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/pbgzngw0ntpias3fkz37seyf4q77" alt="Preview 4" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/pbgzngw0ntpias3fkz37seyf4q77')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+						</div>
+						<div class="product-main flex-grow-1">
+							<img id="mainProductImage" src="images/main-banner18.jpg" alt="Mindfulness Planner" class="img-fluid rounded shadow-sm" style="max-height: 520px; width: 100%; object-fit: contain; background: #faf8f5; border: 1px solid #eee;">
+						</div>
+					</div>
 				</div>
 
-				<div class="col-md-7 pl-5">
+				<div class="col-md-6 pl-5">
 					<div class="product-detail">
 						<span>Planners</span>
 						<h1>Reflection Planner</h1>
@@ -253,6 +263,16 @@ Whether you are starting a morning routine, unwinding before bed, setting person
 			</div>
 		</div>
 	</section>
+
+	<script>
+	function changeMainImage(thumbEl, src) {
+		document.getElementById('mainProductImage').src = src;
+		document.querySelectorAll('.thumb-img').forEach(function(el) {
+			el.style.border = '2px solid #ddd';
+		});
+		thumbEl.style.border = '2px solid #333';
+	}
+	</script>
 
 	<section class="product-tabs mt-5">
 		<div class="container">

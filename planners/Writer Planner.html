@@ -209,11 +209,21 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-5">
-					<a href="#" class="product-image"><img src="images/main-banner12.jpg"></a>
+				<div class="col-md-6">
+					<div class="product-gallery d-flex gap-3">
+						<div class="product-thumbs d-flex flex-column gap-2" style="width: 90px; flex-shrink: 0;">
+							<img src="https://public-files.gumroad.com/prnxg32gja0s2lqfec3iwandqo75" alt="Preview 1" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/prnxg32gja0s2lqfec3iwandqo75')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/ygysxjqzxm07m4lta6albof58tsk" alt="Preview 2" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/ygysxjqzxm07m4lta6albof58tsk')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/1coux4i0ww1443nngt4xx4nvdofr" alt="Preview 3" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/1coux4i0ww1443nngt4xx4nvdofr')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+							<img src="https://public-files.gumroad.com/vnz5zj2va10txkz8bzk0vvil0nih" alt="Preview 4" class="thumb-img" onclick="changeMainImage(this, 'https://public-files.gumroad.com/vnz5zj2va10txkz8bzk0vvil0nih')" style="width: 80px; height: auto; border: 2px solid #ddd; border-radius: 6px; cursor: pointer; object-fit: cover;">
+						</div>
+						<div class="product-main flex-grow-1">
+							<img id="mainProductImage" src="images/main-banner12.jpg" alt="Writer Planner" class="img-fluid rounded shadow-sm" style="max-height: 520px; width: 100%; object-fit: contain; background: #faf8f5; border: 1px solid #eee;">
+						</div>
+					</div>
 				</div>
 
-				<div class="col-md-7 pl-5">
+				<div class="col-md-6 pl-5">
 					<div class="product-detail">
 						<span>Planners</span>
 						<h1>Writer Planner</h1>
@@ -253,6 +263,16 @@ Whether you are plotting your next novel, working on NaNoWriMo, keeping a guided
 			</div>
 		</div>
 	</section>
+
+	<script>
+	function changeMainImage(thumbEl, src) {
+		document.getElementById('mainProductImage').src = src;
+		document.querySelectorAll('.thumb-img').forEach(function(el) {
+			el.style.border = '2px solid #ddd';
+		});
+		thumbEl.style.border = '2px solid #333';
+	}
+	</script>
 
 	<section class="product-tabs mt-5">
 		<div class="container">
